@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:text="sign up"
+        />
+
+    <EditText
+        android:id="@+id/eTLemail"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="enter email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/eTLpas"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="enter password"
+        android:inputType="text|textPassword" />
+
+    <EditText
+        android:id="@+id/eTName"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="enter user name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/eTid"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:hint="enter id" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/btnSign"
+        android:layout_width="187dp"
+        android:layout_height="72dp"
+        android:onClick="signUp"
+        android:layout_gravity="center"
+        android:text="sign up" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="if you have an account log in"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+    <Button
+        android:layout_width="255dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:onClick="logIn"
+        android:text="log in" />
+</LinearLayout>

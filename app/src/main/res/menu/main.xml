@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/menuSignUp"
+    android:title="SignUp"
+    android:orderInCategory="200"
+    />
+
+    <item
+        android:id="@+id/menuLogIn"
+        android:title="LogIn"
+        android:orderInCategory="300"
+        />
+
+    <item
+        android:id="@+id/menuGallery"
+        android:title="Gallery"
+        android:orderInCategory="400"
+        />
+
+    <item
+        android:id="@+id/menuMain"
+        android:title="Main"
+        android:orderInCategory="100"
+        />
+
+    <item
+        android:id="@+id/menuCamera"
+        android:title="Camera"
+        android:orderInCategory="500"
+        />
+
+
+
+</menu>

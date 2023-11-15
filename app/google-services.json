@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "605061112996",
+    "project_id": "alphave-55483",
+    "storage_bucket": "alphave-55483.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605061112996:android:010f4fc68f2961d6f37231",
+        "android_client_info": {
+          "package_name": "com.example.alphave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbAPpyj38EQK79jcKNPawjVrpCH7lint0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

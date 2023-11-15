@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LogIn">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:text="log in"
+        />
+
+    <EditText
+        android:id="@+id/eTLemail"
+        android:layout_width="358dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter email"
+        android:textSize="25dp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/eTLpas"
+        android:layout_width="358dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="enter password"
+        android:textSize="25dp"
+        android:inputType="text|textPassword" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <Button
+        android:layout_width="255dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:onClick="logIn"
+        android:text="log in" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="if you don't have an account sign in"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <Button
+        android:layout_width="255dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:onClick="register"
+        android:text="register" />
+</LinearLayout>
