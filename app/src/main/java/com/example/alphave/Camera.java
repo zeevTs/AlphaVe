@@ -37,7 +37,7 @@ import java.util.Locale;
 
 public class Camera extends AppCompatActivity {
     private ImageView iV2;
-    private Intent toLog, toSign, toMain, toGal, toCam, iCamera;
+    private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot;
     private final int CAMERA_PERMISSION_CODE = 100;
     private final int CAMERA_REQUEST_CODE = 101;
     private StorageReference storageReference;
@@ -58,6 +58,7 @@ public class Camera extends AppCompatActivity {
         toCam = new Intent(Camera.this, Camera.class);
         toMain = new Intent(Camera.this, Main.class);
         toSign = new Intent(Camera.this, MainActivity.class);
+        toNot = new Intent(Camera.this, Notification.class);
     }
 
     @Override
@@ -79,6 +80,8 @@ public class Camera extends AppCompatActivity {
             startActivity(toGal);
         }else if(s1.equals("Main")){
             startActivity(toMain);
+        }else if(s1.equals("Notification")){
+            startActivity(toNot);
         }
 
         return super.onOptionsItemSelected(item);

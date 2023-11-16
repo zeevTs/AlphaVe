@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     private EditText eTemail, eTpas, eTname,eTid;
-    private Intent toLog, toSign, toMain, toGal, toCam;
+    private Intent toLog, toSign, toMain, toGal, toCam,toNot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         toCam = new Intent(MainActivity.this, Camera.class);
         toMain = new Intent(MainActivity.this, Main.class);
         toSign = new Intent(MainActivity.this, MainActivity.class);
+        toNot = new Intent(MainActivity.this,Notification.class);
     }
 
 
@@ -91,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(toGal);
         }else if(s1.equals("Main")){
             startActivity(toMain);
+        }else if(s1.equals("Notification")){
+            startActivity(toNot);
         }
 
         return super.onOptionsItemSelected(item);

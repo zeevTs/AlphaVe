@@ -8,14 +8,13 @@
     tools:context=".Notification">
 
     <EditText
-        android:id="@+id/textView"
-        android:layout_width="338dp"
-        android:layout_height="200dp"
+        android:id="@+id/etNot"
+        android:layout_width="424dp"
+        android:layout_height="148dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="25dp"
-        android:hint="enter notification's name"
-         />
+        android:hint="enter notification"
+        android:textSize="25dp" />
 
     <Space
         android:layout_width="match_parent"
@@ -23,10 +22,23 @@
          />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnNot"
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:layout_gravity="center"
         android:onClick="notification"
+        android:textSize="20dp"
         android:text="set notification" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:onClick="notificationBtn"
+        android:text="set notification button" />
 </LinearLayout>

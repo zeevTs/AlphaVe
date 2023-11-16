@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Main extends AppCompatActivity {
-    private Intent toLog, toSign, toMain, toGal, toCam;
+    private Intent toLog, toSign, toMain, toGal, toCam,toNot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +28,7 @@ public class Main extends AppCompatActivity {
         toCam = new Intent(Main.this, Camera.class);
         toSign = new Intent(Main.this, MainActivity.class);
         toMain = new Intent(Main.this, Main.class);
+        toNot = new Intent(Main.this,Notification.class);
     }
 
 
@@ -50,6 +51,8 @@ public class Main extends AppCompatActivity {
             startActivity(toGal);
         }else if(s1.equals("Main")){
             startActivity(toMain);
+        }else if(s1.equals("Notification")){
+            startActivity(toNot);
         }
 
         return super.onOptionsItemSelected(item);

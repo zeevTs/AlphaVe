@@ -34,7 +34,7 @@ public class Gallery1 extends AppCompatActivity {
     private ImageView iV1;
     private Button bTnG;
     private final int GALLERY_REQ_CODE= 1000;
-    private Intent toLog, toSign, toMain, toGal, toCam,iGallery;
+    private Intent toLog, toSign, toMain, toGal, toCam,iGallery,toNot;
     private Uri imageUri;
     private ProgressDialog prog;
 
@@ -54,6 +54,7 @@ public class Gallery1 extends AppCompatActivity {
         toCam = new Intent(Gallery1.this, Camera.class);
         toMain = new Intent(Gallery1.this, Main.class);
         toGal = new Intent(Gallery1.this, Gallery1.class);
+        toNot = new Intent(Gallery1.this, Notification.class);
     }
 
     public void gallery(View view) {
@@ -89,8 +90,9 @@ public class Gallery1 extends AppCompatActivity {
             startActivity(toGal);
         }else if(s1.equals("Main")){
             startActivity(toMain);
+        }else if(s1.equals("Notification")) {
+            startActivity(toNot);
         }
-
         return super.onOptionsItemSelected(item);
     }
 
