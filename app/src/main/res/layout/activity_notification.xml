@@ -16,19 +16,6 @@
         android:hint="enter notification"
         android:textSize="25dp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-         />
-
-    <Button
-        android:id="@+id/btnNot"
-        android:layout_width="250dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:onClick="notification"
-        android:textSize="20dp"
-        android:text="set notification" />
 
     <Space
         android:layout_width="match_parent"
@@ -41,4 +28,16 @@
         android:layout_gravity="center"
         android:onClick="notificationBtn"
         android:text="set notification button" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:onClick="notificationTime"
+        android:text="set notification Time" />
 </LinearLayout>
