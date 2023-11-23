@@ -21,6 +21,21 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".SharedPref"
+            android:exported="false" />
+        <activity
+            android:name=".NetworkBrodcast"
+            android:exported="false" />
+
+        <receiver
+            android:name=".NetworkStateReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".GoogleMaps"
+            android:exported="false" />
+        <activity
             android:name=".Notification"
             android:exported="false" />
         <activity
@@ -35,11 +50,11 @@
         <activity
             android:name=".Main"
             android:exported="false" />
+
         <receiver
             android:name=".AlarmReceiver"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="true" />
 
         <activity
             android:name=".MainActivity"

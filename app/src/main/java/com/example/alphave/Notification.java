@@ -20,7 +20,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class Notification extends AppCompatActivity {
-    private Intent toLog, toSign, toMain, toGal, toCam, toNot;
+    private Intent toLog, toSign, toMain, toGal, toCam, toNot,toMap,toBrod,toPref;
     private EditText etNot;
     private AlarmManager alarmMgr;
     private PendingIntent alarmIntent;
@@ -41,6 +41,9 @@ public class Notification extends AppCompatActivity {
         toMain = new Intent(Notification.this, Main.class);
         toSign = new Intent(Notification.this, MainActivity.class);
         toNot = new Intent(Notification.this, Notification.class);
+        toMap = new Intent(Notification.this,GoogleMaps.class);
+        toBrod = new Intent(Notification.this,NetworkBrodcast.class);
+        toPref = new Intent(Notification.this,SharedPref.class);
         etNot = findViewById(R.id.etNot);
     }
 
@@ -64,6 +67,12 @@ public class Notification extends AppCompatActivity {
             startActivity(toMain);
         } else if (s1.equals("Notification")) {
             startActivity(toNot);
+        } else if (s1.equals("GoogleMaps")) {
+            startActivity(toMap);
+        }else if (s1.equals("BrodcastReceiver")) {
+            startActivity(toBrod);
+        }else if (s1.equals("SharedPref")) {
+            startActivity(toPref);
         }
         return super.onOptionsItemSelected(item);
     }

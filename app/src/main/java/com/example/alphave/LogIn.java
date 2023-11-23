@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogIn extends AppCompatActivity {
     private EditText eTLpas;
     private EditText eTLemail;
-    private Intent toLog, toSign, toMain, toGal, toCam,toNot;
+    private Intent toLog, toSign, toMain, toGal, toCam,toNot,toMap,toBrod,toPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,9 @@ public class LogIn extends AppCompatActivity {
         toCam = new Intent(LogIn.this, Camera.class);
         toMain = new Intent(LogIn.this, Main.class);
         toNot = new Intent(LogIn.this, Notification.class);
+        toMap = new Intent(LogIn.this, GoogleMaps.class);
+        toBrod = new Intent(LogIn.this, NetworkBrodcast.class);
+        toPref = new Intent(LogIn.this, SharedPref.class );
     }
 
     public void logIn(View view) {
@@ -87,6 +90,12 @@ public class LogIn extends AppCompatActivity {
             startActivity(toMain);
         }else if(s1.equals("Notification")){
             startActivity(toNot);
+        }else if (s1.equals("GoogleMaps")) {
+            startActivity(toMap);
+        }else if (s1.equals("BrodcastReceiver")) {
+            startActivity(toBrod);
+        }else if (s1.equals("SharedPref")) {
+            startActivity(toPref);
         }
 
         return super.onOptionsItemSelected(item);

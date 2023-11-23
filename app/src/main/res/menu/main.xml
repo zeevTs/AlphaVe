@@ -35,6 +35,21 @@
         android:title="Notification"
         android:orderInCategory="600"
         />
+    <item
+        android:id="@+id/menuGoogleMaps"
+        android:title="GoogleMaps"
+        android:orderInCategory="700"
+        />
+    <item
+        android:id="@+id/menuBrodcastReciever"
+        android:title="BrodcastReceiver"
+        android:orderInCategory="900"
+        />
+    <item
+        android:id="@+id/menuSharedPref"
+        android:title="SharedPref"
+        android:orderInCategory="1000"
+        />
 
 
 
