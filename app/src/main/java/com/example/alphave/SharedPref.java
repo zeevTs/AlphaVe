@@ -4,17 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class SharedPref extends AppCompatActivity {
+    SharedPreferences sf ;
+    private TextView tvShow;
+    EditText etData;
+    String st;
     private Intent toLog, toSign, toMain, toGal, toCam, toNot,toMap,toBrod,toPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shared_pref);
         initViews();
+        sf =getSharedPreferences("prefName",MODE_PRIVATE);
+        st = sf.getString("text","");
+        tvShow.setText(st);
     }
 
     private void initViews() {
@@ -27,6 +38,8 @@ public class SharedPref extends AppCompatActivity {
         toMap = new Intent(SharedPref.this,GoogleMaps.class);
         toBrod = new Intent(SharedPref.this,NetworkBrodcast.class);
         toPref = new Intent(SharedPref.this,SharedPref.class);
+        etData = findViewById(R.id.eTData);
+        tvShow = findViewById(R.id.tvShow) ;
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,5 +69,14 @@ public class SharedPref extends AppCompatActivity {
             startActivity(toPref);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void save(View view) {
+        sf = getSharedPreferences("prefName",MODE_PRIVATE);
+        SharedPreferences.Editor ed = sf.edit();
+        st = etData.getText().toString();
+        tvShow.setText(st);
+        ed.putString("text",st);
+        ed.commit();
     }
 }

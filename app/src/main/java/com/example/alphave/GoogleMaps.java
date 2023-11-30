@@ -3,20 +3,30 @@ package com.example.alphave;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class GoogleMaps extends AppCompatActivity {
+
+    private EditText eTLoc,eTDes;
     private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot,toMap,toBrod;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_maps);
+        initViews();
     }
     private void initViews() {
+        eTLoc = findViewById(R.id.eTLoc);
+        eTDes = findViewById(R.id.eTDes);
+
         toLog = new Intent(GoogleMaps.this, LogIn.class);
         toGal = new Intent(GoogleMaps.this, Gallery1.class);
         toCam = new Intent(GoogleMaps.this, Camera.class);
@@ -54,8 +64,30 @@ public class GoogleMaps extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void googleMAp(View view) {
-
+    public void googleMaps(View view) {
+        String location = eTLoc.getText().toString();
+        String destination = eTDes.getText().toString();
+        if(location.equals("") || destination.equals("")){
+            Toast.makeText(this, " please enter location and destination", Toast.LENGTH_SHORT).show();
+        }else{
+            getDirections(location,destination);
+        }
     }
+
+    private void getDirections(String location, String destination) {
+        try {
+            Uri uri = Uri.parse("https://www.google.com/maps/dir/" + location + "/" + destination);
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            mapIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(mapIntent);
+        }catch (ActivityNotFoundException exp){
+            Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+            Intent downloadIntent = new Intent(Intent.ACTION_VIEW, uri);
+            downloadIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(downloadIntent);
+        }
+    }
+
+
 }

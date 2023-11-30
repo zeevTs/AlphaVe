@@ -12,6 +12,7 @@
         android:layout_height="150dp" />
 
     <EditText
+        android:id="@+id/eTLoc"
         android:layout_width="306dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -23,6 +24,7 @@
         android:layout_height="50dp" />
 
     <EditText
+        android:id="@+id/eTDes"
         android:layout_width="306dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -37,6 +39,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open google maps"
-        android:onClick="googleMap"
+        android:onClick="googleMaps"
         android:layout_gravity="center"/>
 </LinearLayout>
