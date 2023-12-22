@@ -37,7 +37,7 @@ import java.util.Locale;
 
 public class Camera extends AppCompatActivity {
     private ImageView iV2;
-    private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot,toMap,toBrod,toPref;
+    private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot,toMap,toBrod,toPref,toChat;
     private final int CAMERA_PERMISSION_CODE = 100;
     private final int CAMERA_REQUEST_CODE = 101;
     private StorageReference storageReference;
@@ -62,6 +62,7 @@ public class Camera extends AppCompatActivity {
         toMap = new Intent(Camera.this,GoogleMaps.class);
         toBrod = new Intent(Camera.this,NetworkBrodcast.class);
         toPref = new Intent(Camera.this,SharedPref.class);
+        toChat = new Intent(Camera.this,ChatsActivity.class);
     }
 
     @Override
@@ -91,6 +92,8 @@ public class Camera extends AppCompatActivity {
             startActivity(toBrod);
         }else if (s1.equals("SharedPref")) {
             startActivity(toPref);
+        }else if (s1.equals("Chat")) {
+            startActivity(toChat);
         }
 
         return super.onOptionsItemSelected(item);

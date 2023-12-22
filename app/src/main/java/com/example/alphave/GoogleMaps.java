@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class GoogleMaps extends AppCompatActivity {
 
     private EditText eTLoc,eTDes;
-    private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot,toMap,toBrod;
+    private Intent toLog, toSign, toMain, toGal, toCam, iCamera,toNot,toMap,toBrod,toPref,toChat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,8 @@ public class GoogleMaps extends AppCompatActivity {
         toNot = new Intent(GoogleMaps.this, Notification.class);
         toMap = new Intent(GoogleMaps.this, GoogleMaps.class);
         toBrod = new Intent(GoogleMaps.this,NetworkBrodcast.class);
+        toPref = new Intent(GoogleMaps.this,SharedPref.class);
+        toChat = new Intent(GoogleMaps.this,ChatsActivity.class);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main,menu);
@@ -60,6 +62,11 @@ public class GoogleMaps extends AppCompatActivity {
             startActivity(toMap);
         }else if (s1.equals("BrodcastReceiver")) {
             startActivity(toBrod);
+        }else if (s1.equals("SharedPref")) {
+            startActivity(toPref);
+
+        }else if (s1.equals("Chat")) {
+            startActivity(toChat);
         }
 
         return super.onOptionsItemSelected(item);

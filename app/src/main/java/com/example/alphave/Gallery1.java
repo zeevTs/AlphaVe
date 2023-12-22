@@ -34,7 +34,7 @@ public class Gallery1 extends AppCompatActivity {
     private ImageView iV1;
     private Button bTnG;
     private final int GALLERY_REQ_CODE= 1000;
-    private Intent toLog, toSign, toMain, toGal, toCam,iGallery,toNot,toMap,toBrod,toPref;
+    private Intent toLog, toSign, toMain, toGal, toCam,iGallery,toNot,toMap,toBrod,toPref,toChat;
     private Uri imageUri;
     private ProgressDialog prog;
 
@@ -57,7 +57,8 @@ public class Gallery1 extends AppCompatActivity {
         toNot = new Intent(Gallery1.this, Notification.class);
         toMap = new Intent(Gallery1.this, GoogleMaps.class);
         toBrod = new Intent(Gallery1.this, NetworkBrodcast.class);
-        toBrod = new Intent(Gallery1.this, SharedPref.class);
+        toPref = new Intent(Gallery1.this, SharedPref.class);
+        toChat = new Intent(Gallery1.this, ChatsActivity.class);
     }
 
     public void gallery(View view) {
@@ -101,6 +102,8 @@ public class Gallery1 extends AppCompatActivity {
             startActivity(toBrod);
         }else if (s1.equals("SharedPref")) {
             startActivity(toPref);
+        }else if (s1.equals("Chat")) {
+            startActivity(toChat);
         }
         return super.onOptionsItemSelected(item);
     }

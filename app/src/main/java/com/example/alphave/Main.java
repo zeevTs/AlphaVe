@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Main extends AppCompatActivity {
-    private Intent toLog, toSign, toMain, toGal, toCam,toNot,toMap,toBrod,toPref;
+    private Intent toLog, toSign, toMain, toGal, toCam,toNot,toMap,toBrod,toPref,toChat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +32,7 @@ public class Main extends AppCompatActivity {
         toMap = new Intent(Main.this, GoogleMaps.class);
         toBrod = new Intent(Main.this,NetworkBrodcast.class);
         toPref = new Intent(Main.this, SharedPref.class);
+        toChat = new Intent(Main.this,ChatsActivity.class);
     }
 
 
@@ -62,6 +63,10 @@ public class Main extends AppCompatActivity {
             startActivity(toBrod);
         }else if (s1.equals("SharedPref")) {
             startActivity(toPref);
+        }else if (s1.equals("SharedPref")) {
+            startActivity(toPref);
+        }else if (s1.equals("Chat")) {
+            startActivity(toChat);
         }
 
         return super.onOptionsItemSelected(item);

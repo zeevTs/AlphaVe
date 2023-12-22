@@ -78,5 +78,6 @@ public class SharedPref extends AppCompatActivity {
         tvShow.setText(st);
         ed.putString("text",st);
         ed.commit();
+
     }
 }
